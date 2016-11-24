@@ -59,16 +59,23 @@
         <td></td>
     </tr>
 </table>
+<button
+        style="margin-top: 30px; padding: 20px;"
+        id="clearDataButton"
+        onclick='clearData();'>Reset
+</button>
 </body>
 
 </html>
 
 <script>
     $(function () {
-        var storedItems = JSON.parse(localStorage.getItem("items"));
+        var storedItems = JSON.parse(localStorage.getItem("bingoItems"));
         if (!storedItems) {
-            shuffle(items);
-            localStorage.setItem("items", JSON.stringify(items));
+            items = shuffle(items);
+            localStorage.setItem("bingoItems", JSON.stringify(items));
+        } else {
+            items = storedItems;
         }
 
         $("td").each(function (index) {
@@ -83,7 +90,7 @@
                 result.selected = !result.selected;
                 setCellColor(cell, result.selected);
 
-                localStorage.setItem("items", JSON.stringify(items));
+                localStorage.setItem("bingoItems", JSON.stringify(items));
             });
         });
     });
@@ -125,6 +132,11 @@
             cell.css('background-color', 'white');
             cell.css('color', 'black');
         }
+    }
+
+    function clearData() {
+        localStorage.removeItem("bingoItems");
+        location.reload();
     }
 
     //borrow from http://stackoverflow.com/questions/2160890/how-do-you-append-rows-to-a-table-using-jquery
