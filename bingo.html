@@ -6,22 +6,28 @@
             crossorigin="anonymous"></script>
     <style>
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid green;
         }
 
         table {
-            width: 500px;
-            height: 500px;
+            table-layout: fixed;
         }
 
         td {
-            width: 50px;
-            height: 50px;
+            width: 125px;
+            height: 125px;
+            min-width: 125px;
+            min-height: 125px;
+            max-width: 125px;
+            max-height: 125px;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
+<center>
 <table id="bingoTable">
     <tr id="row0">
         <td></td>
@@ -60,10 +66,11 @@
     </tr>
 </table>
 <button
-        style="margin-top: 30px; padding: 20px;"
+        style="margin-top: 30px; padding: 20px; width: 605px;"
         id="clearDataButton"
         onclick='clearData();'>Reset
 </button>
+</center>
 </body>
 
 </html>
@@ -81,6 +88,8 @@
         $("td").each(function (index) {
             var cell = $(this);
             cell.text(items[index].text);
+            cell.css('font-weight', 'bold');
+            cell.css('text-align', 'center')
             setCellColor(cell, items[index].selected);
 
             cell.click(function (event) {
