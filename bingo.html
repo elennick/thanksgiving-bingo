@@ -6,7 +6,8 @@
             crossorigin="anonymous"></script>
     <style>
         table, th, td {
-            border: 1px solid green;
+            font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+            border: 1px solid black;
         }
 
         table {
@@ -89,7 +90,7 @@
             var cell = $(this);
             cell.text(items[index].text);
             cell.css('font-weight', 'bold');
-            cell.css('text-align', 'center')
+            cell.css('text-align', 'center');
             setCellColor(cell, items[index].selected);
 
             cell.click(function (event) {
@@ -100,6 +101,8 @@
                 setCellColor(cell, result.selected);
 
                 localStorage.setItem("bingoItems", JSON.stringify(items));
+
+                checkForBingo(items);
             });
         });
     });
@@ -148,7 +151,11 @@
         location.reload();
     }
 
-    //borrow from http://stackoverflow.com/questions/2160890/how-do-you-append-rows-to-a-table-using-jquery
+    function checkForBingo(itemsToCheck) {
+        //if there are 5 in a row then show an alert or something
+    }
+
+    //borrowed from http://stackoverflow.com/questions/2160890/how-do-you-append-rows-to-a-table-using-jquery
     function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
 
