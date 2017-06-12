@@ -1,0 +1,30 @@
+table, th, td {
+    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    border: 1px solid black;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    width: 125px;
+    height: 125px;
+    min-width: 125px;
+    min-height: 125px;
+    max-width: 125px;
+    max-height: 125px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bigbutton {
+    margin-top: 30px;
+    padding: 20px;
+    width: 605px;
+}
+
+.bingotable {
+    margin-left: auto;
+    margin-right: auto;
+}
