@@ -59,7 +59,6 @@ let items = [
 ];
 
 function setCellColor(cell, selected) {
-    console.log(selected);
     if (selected) {
         cell.css('background-color', 'green');
         cell.css('color', 'white');

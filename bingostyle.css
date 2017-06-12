@@ -1,13 +1,28 @@
-table, th, td {
-    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-    border: 1px solid black;
+.centeredtable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bigbutton {
+    margin-top: 30px;
+    padding: 20px;
+    width: 605px;
+}
+
+input {
+    width: 400px;
 }
 
 table {
     table-layout: fixed;
+    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
 }
 
-td {
+.bingotable table, th, td {
+    border: 1px solid black;
+}
+
+.bingotable td {
     width: 125px;
     height: 125px;
     min-width: 125px;
@@ -18,13 +33,9 @@ td {
     border-radius: 5px;
 }
 
-.bigbutton {
-    margin-top: 30px;
-    padding: 20px;
-    width: 605px;
-}
-
-.bingotable {
-    margin-left: auto;
-    margin-right: auto;
-}
+/*
+.customizetable table, th, td {
+    font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    border: 0px;
+    padding: 5px;
+}*/
